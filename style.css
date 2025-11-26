@@ -67,7 +67,7 @@ body {
 }
 
 .container::-webkit-scrollbar-thumb {
-    background: var(--secondary);
+    background: var(--main);
 }
 
 header {
