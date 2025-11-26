@@ -32,11 +32,6 @@ body {
     align-items: center;
     color: var(--text);
     background: var(--bg);
-    /* background: url('imgs/1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    backdrop-filter: brightness(.5); */
 }
 
 body::-webkit-scrollbar {
