@@ -373,6 +373,7 @@ header .error-message {
     }
 
     .meal-details .ingredients {
+        padding: .5em;
         width: 70vw;
     }
 
