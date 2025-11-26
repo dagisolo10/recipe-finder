@@ -41,27 +41,28 @@ async function searchMeal() {
     mealDetails.classList.add('hidden')
     const searchInput = document.getElementById('search-input')
     const searchTerm = searchInput.value.trim()
-
+    
     if (!searchTerm) {
         errorMessage.textContent = 'Please Enter a search term<'
         errorMessage.classList.remove('hidden')
         return
     }
-
-
+    
+    
     try {
         searchResult.textContent = `Searching for "${searchTerm}"...`
         mealsContainer.innerHTML = ''
         errorMessage.classList.add('hidden')
         searchResult.classList.remove('hidden')
         searchBtn.toggleAttribute('disabled')
-
+        
         const response = await fetch(`${SEARCH_URL}${searchTerm}`)
         const data = await response.json()
-
+        
         if (!data.meals) {
             searchInput.value = ''
             mealsContainer.innerHTML = ''
+            mealDetails.classList.add('hidden')
             searchResult.classList.add('hidden')
             errorMessage.classList.remove('hidden')
             errorMessage.textContent = `No recipes found for "${searchTerm}". Try another search term`
@@ -72,10 +73,14 @@ async function searchMeal() {
             }, 2000);
             return
         }
-
+        
         searchInput.value = ''
         searchResult.textContent = `Search result for "${searchTerm}":`
         searchBtn.removeAttribute('disabled')
+        document.body.style.height = 'auto'
+        document.body.style.background = 'var(--bg)'
+        document.body.style.backdropFilter = 'brightness(1)'
+
         displayMeals(data.meals)
 
     }

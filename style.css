@@ -13,6 +13,7 @@
     --text: #fff;
     --error: tomato;
     --faded: hsl(0, 0%, 80%);
+    /* --bg: #fff; */
     --bg: #00000f;
     --border: .375em;
     --transition: .5s ease, box-shadow .3s ease;
@@ -31,7 +32,14 @@
 body {
     align-items: center;
     color: var(--text);
-    background: var(--bg);
+    /* background: var(--bg); */
+    background: url(eggs.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: brightness(.4);
+    height: 100vh;
+    transition: var(--transition);
 }
 
 body::-webkit-scrollbar {
@@ -55,9 +63,8 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    backdrop-filter: blur(20px);
-    background: transparent;
-    /* padding: 1em 2em; */
+    padding: 1em 3em;
+    border-radius: var(--border);
 }
 
 header h1 {
@@ -66,7 +73,8 @@ header h1 {
 }
 
 header p {
-    color: var(--faded);
+    /* color: var(--faded); */
+    color: var(--text);
     text-align: center;
     width: 100%;
 }
@@ -110,8 +118,7 @@ header .search-btn:hover {
 }
 
 header .search-result {
-    text-align: left;
-    padding: 0 4em;
+    text-align: center;
     color: var(--text);
 }
 
@@ -247,8 +254,8 @@ header .error-message {
 
 .meal-details .ingredients p {
     line-height: normal;
-    align-items: center;
-    padding: .3em 1em;
+    align-items: safe;
+    padding: .3em 2em;
     background: hsl(from var(--bg) h calc(s - 70) calc(l + 10));
     border-radius: var(--border);
 }
