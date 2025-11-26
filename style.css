@@ -12,7 +12,7 @@
     --secondary: #9500ff;
     --text: #fff;
     --error: tomato;
-    --faded: hsl(0, 0%, 90%);
+    --faded: hsl(0, 0%, 80%);
     --bg: #00000f;
     --border: .375em;
     --transition: .5s ease, box-shadow .3s ease;
@@ -25,7 +25,7 @@
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 body {
@@ -122,6 +122,7 @@ header .search-result {
 
 header .error-message {
     text-align: center;
+    font-size: .8rem;
     color: var(--text);
     background: hsl(from var(--error) h s calc(l + 10));
     border-radius: var(--border);
@@ -133,7 +134,7 @@ header .error-message {
 .meals-container {
     width: 100%;
     display: grid;
-    padding: 0 5em;
+    padding: 0 2em;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5em;
     justify-content: center;
@@ -159,7 +160,6 @@ header .error-message {
     height: 200px;
     object-fit: cover;
 
-
     border-top-left-radius: calc(var(--border) + .5em);
     border-top-right-radius: calc(var(--border) + .5em);
 }
@@ -177,9 +177,164 @@ header .error-message {
     font-size: .9rem;
 }
 
-.meals-container .meal .meal-info .catagory {
+.category {
     font-size: .8rem;
     background: var(--dark);
     border-radius: var(--border);
     padding: .3em 2em;
+    line-height: 2em;
+}
+
+.meal-details {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    background: hsl(from var(--bg) h calc(s - 70) calc(l + 5));
+    padding: 2em 3em;
+    border-radius: var(--border);
+    gap: 1em;
+
+}
+
+.back-to-top {
+    margin-right: auto;
+    background: transparent;
+    color: var(--secondary);
+    border: 1.5px solid var(--secondary);
+    font-size: .7rem;
+    padding: .5em 1em;
+    border-radius: var(--border);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.back-to-top:hover {
+    color: var(--text);
+    background: var(--secondary);
+}
+
+.meal-details img {
+    width: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--border);
+}
+
+.meal-details h1 {
+    color: var(--main);
+}
+
+.meal-details h3 {
+    margin-right: auto;
+}
+
+.meal-details p {
+    font-size: .8rem;
+    color: var(--faded);
+    line-height: 1.75em;
+}
+
+.meal-details a {
+    text-decoration: none;
+    color: white;
+    background: red;
+    padding: .5em 1em;
+    border-radius: var(--border);
+
+}
+
+.meal-details .ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.meal-details .ingredients p {
+    line-height: normal;
+    align-items: center;
+    padding: .3em 1em;
+    background: hsl(from var(--bg) h calc(s - 70) calc(l + 10));
+    border-radius: var(--border);
+}
+
+.meal-details .ingredients i {
+    font-size: 8px;
+    color: white;
+    background: green;
+    border-radius: 50%;
+    padding: .5em;
+}
+
+/* Breakpoints */
+
+@media (max-width: 768px) {
+    .meals-container {
+        padding: 0 5em;
+    }
+
+    .meal-details {
+        padding: 1em 2em;
+    }
+
+    .meal-details h1 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 426px) {
+    header form {
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    form input {
+        font-size: .7rem;
+        padding: 0 .5em;
+    }
+
+    form button {
+        font-size: .7rem;
+        padding: .5em 2em;
+    }
+
+    header p {
+        font-size: .8rem;
+    }
+
+    .meal-details {
+        padding: 1em;
+    }
+
+    .category {
+        font-size: .65rem;
+        padding: .2em 1em;
+    }
+
+    .meal-details h1 {
+        font-size: 1.25rem;
+    }
+
+    .meal-details h3 {
+        font-size: 1rem;
+    }
+
+    .meal-details p {
+        font-size: .6rem;
+    }
+
+    .meal-details a {
+        padding: .5em 1em;
+        font-size: .7rem;
+    }
+
+    .back-to-top {
+        font-size: .6rem;
+    }
+
+    .ingredients {
+        width: 100%;
+    }
 }
