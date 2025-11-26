@@ -13,7 +13,6 @@
     --text: #fff;
     --error: tomato;
     --faded: hsl(0, 0%, 80%);
-    /* --bg: #fff; */
     --bg: #00000f;
     --border: .375em;
     --transition: .5s ease, box-shadow .3s ease;
@@ -196,13 +195,16 @@ header .error-message {
     padding: 2em 3em;
     border-radius: var(--border);
     gap: 1em;
+}
 
+.meal-details .category {
+    color: var(--text);
 }
 
 .back-to-top {
     margin-right: auto;
     background: transparent;
-    color: var(--secondary);
+    color: var(--text);
     border: 1.5px solid var(--secondary);
     font-size: .7rem;
     padding: .5em 1em;
@@ -221,6 +223,10 @@ header .error-message {
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: var(--border);
+    transition: var(--transition);
+}
+.meal-details img:hover {
+    transform: var(--hover);
 }
 
 .meal-details h1 {
@@ -265,7 +271,7 @@ header .error-message {
     color: white;
     background: green;
     border-radius: 50%;
-    padding: .5em;
+    padding: .2em;
 }
 
 /* Breakpoints */
