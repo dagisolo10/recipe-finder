@@ -77,9 +77,6 @@ async function searchMeal() {
         searchInput.value = ''
         searchResult.textContent = `Search result for "${searchTerm}":`
         searchBtn.removeAttribute('disabled')
-        document.body.style.height = 'auto'
-        document.body.style.background = 'var(--bg)'
-        document.body.style.backdropFilter = 'brightness(1)'
 
         displayMeals(data.meals)
 
@@ -150,8 +147,7 @@ function displayMealContent(meal) {
     const backToTop = document.querySelector('.back-to-top')
     backToTop.addEventListener('click', () => {
         mealDetails.classList.add('hidden')
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-        console.log('CLICK')
+        document.querySelector('.container').scrollTo({ top: 0, behavior: 'smooth' })
     })
     mealDetails.classList.remove('hidden')
     mealDetails.scrollIntoView({ behavior: 'smooth' })
