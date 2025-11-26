@@ -254,6 +254,7 @@ header .error-message {
 }
 
 .meal-details .ingredients {
+    width: clamp(25vw, 200px, 60%);
     display: flex;
     flex-direction: column;
     gap: .5em;
