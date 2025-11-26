@@ -225,6 +225,7 @@ header .error-message {
     border-radius: var(--border);
     transition: var(--transition);
 }
+
 .meal-details img:hover {
     transform: var(--hover);
 }
@@ -267,11 +268,11 @@ header .error-message {
 }
 
 .meal-details .ingredients i {
-    font-size: 8px;
+    font-size: .5rem;
     color: white;
     background: green;
     border-radius: 50%;
-    padding: .2em;
+    padding: .5em;
 }
 
 /* Breakpoints */
@@ -344,5 +345,10 @@ header .error-message {
 
     .ingredients {
         width: 100%;
+    }
+
+    .meal-details .ingredients i {
+        font-size: .45rem;
+        padding: .3em;
     }
 }
