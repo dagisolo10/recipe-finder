@@ -43,7 +43,7 @@ async function searchMeal() {
     const searchTerm = searchInput.value.trim()
     
     if (!searchTerm) {
-        errorMessage.textContent = 'Please Enter a search term<'
+        errorMessage.textContent = 'Please Enter a search term'
         errorMessage.classList.remove('hidden')
         return
     }
